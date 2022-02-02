@@ -1,4 +1,15 @@
-<hello name="{{ name }}"></hello>
-<p>
-  Start editing to see some magic happen :)
-</p>
+<h1>Hello {{ user.name }}</h1>
+<ng-template [ngIf]="user.age > 18" [ngIfElse]="notEnough">
+  Bạn đã đủ 18 tuổi
+</ng-template>
+<ng-template #notEnough> Bạn chưa đủ 18 tuổi </ng-template>
+<br />
+<input type="number" [value]="user.age" [(ngModel)]="user.age" />
+<br />
+{{ user.name }}
+<br />
+<br />
+<input #userName [value]="user.name" (change)="changeUserName(userName)" />
+<br />
+<br />
+<!-- <input [value]="name" [(ngModel)]="name" /> -->
