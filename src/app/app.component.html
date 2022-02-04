@@ -1,5 +1,5 @@
 <h1>Hello {{ user.name }}</h1>
-<ng-template [ngIf]="user.age > 18" [ngIfElse]="notEnough">
+<ng-template [ngIf]="user.age >= 18" [ngIfElse]="notEnough">
   Bạn đã đủ 18 tuổi
 </ng-template>
 <ng-template #notEnough> Bạn chưa đủ 18 tuổi </ng-template>
